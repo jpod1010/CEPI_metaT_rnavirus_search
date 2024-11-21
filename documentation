@@ -1,0 +1,18 @@
+several large assembled metatranscriptiome data sources were downloaded, including
+
+Hou et al (https://www.cell.com/cell/fulltext/S0092-8674(24)01085-7?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867424010857%3Fshowall%3Dtrue)
+  https://ftp.cngb.org/pub/CNSA/data4/CNP0005901/CNS1149693/CNA0141908/
+
+  Forgia et al (https://pmc.ncbi.nlm.nih.gov/articles/PMC10162972/)
+           https://github.com/ababaian/serratus/wiki/RNA-Deep-Virome-Assemblage
+
+  Zayed et al (https://pubmed.ncbi.nlm.nih.gov/35389782/)
+               https://datacommons.cyverse.org/browse/iplant/home/shared/iVirus/ZayedWainainaDominguez-Huerta_RNAevolution_Dec2021/Assemblies
+
+We are interested in any Paramyxoviridae and Arenaviridae in these samples - to find these sequences we use all genomes in NCBI and IMG_VR 7 from these groups 
+
+               from NCBI - all genomes in NCBI Taxid 11617 (Arenaviridae) - total 142 genomes and Taxid 11158 (Paramyxoviridae) - total 344 genomes on 11/21/2024
+               from IMG_VR, to identify expanded sequences in these famlies, we search through geNomad imparted taxonomy and then extract these sequences
+                 grep "Arenaviridae" IMGVR_all_Sequence_information.tsv
+                 grep "Paramyxoviridae" IMGVR_all_Sequence_information.tsv
+               
