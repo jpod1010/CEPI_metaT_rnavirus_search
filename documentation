@@ -11,9 +11,10 @@ Hou et al (https://www.cell.com/cell/fulltext/S0092-8674(24)01085-7?_returnURL=h
 
 We are interested in any Paramyxoviridae and Arenaviridae in these samples - to find these sequences we use all genomes in NCBI and IMG_VR 7 from these groups 
 
-               from NCBI - all genomes in NCBI Taxid 11617 (Arenaviridae) - total 142 genomes and Taxid 11158 (Paramyxoviridae) - total 344 genomes - Taxid 11266 (Filoviridate) - total 44 genomes on 11/21/2024
+               from NCBI - all genomes in NCBI Taxid 11617 (Arenaviridae) - total 142 genomes and Taxid 11158 (Paramyxoviridae) - total 344 genomes - Taxid 11266 (Filoviridate) - total 44 genomes on 11/21/2024 and Taxid 1980410 (Bunyvirales) total 586 genomes on 12/11/2024 
                from IMG_VR, to identify expanded sequences in these famlies, we search through geNomad imparted taxonomy and then extract these sequences
                  grep "Arenaviridae" IMGVR_all_Sequence_information.tsv - 111 genomes
                  grep "Paramyxoviridae" IMGVR_all_Sequence_information.tsv - 68 genomes
                  grep "Filoviridae" IMGVR_all_Sequence_information.tsv - 12 genomes
-               
+                 grep "Bunyavirales" IMGVR_all_Sequence_information.tsv - 7373 genomes
+               for i in *_ids; do /home/jpodowski/src/bbmap/filterbyname.sh substring=name names=${i} include=t in=IMGVR_all_nucleotides.fna.gz out=${i//_ids}_contigs.fasta
