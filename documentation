@@ -18,3 +18,7 @@ We are interested in any Paramyxoviridae and Arenaviridae in these samples - to 
                  grep "Filoviridae" IMGVR_all_Sequence_information.tsv - 12 genomes
                  grep "Bunyavirales" IMGVR_all_Sequence_information.tsv - 7373 genomes
                for i in *_ids; do /home/jpodowski/src/bbmap/filterbyname.sh substring=name names=${i} include=t in=IMGVR_all_nucleotides.fna.gz out=${i//_ids}_contigs.fasta
+mmseqs createdb Bunya_Filo_Paramyxo_imgvr_genomic.fasta Bunya_Filo_Paramyxo_imgvr_genomic_DB
+mmseqs createdb Bunya_Filo_Arena_Para_ncbi_genomic.fasta Bunya_Filo_Arena_Para_ncbi_genomic_DB
+
+mmseqs search --threads 200 --search-type 3 Bunya_Filo_Arena_Para_ncbi_genomic_DB Hou_et_al.index Bunya_Filo_Arena_Para_ncbi_genomic_DB_ResultsDB tmp
