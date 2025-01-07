@@ -22,3 +22,7 @@ mmseqs createdb Bunya_Filo_Paramyxo_imgvr_genomic.fasta Bunya_Filo_Paramyxo_imgv
 mmseqs createdb Bunya_Filo_Arena_Para_ncbi_genomic.fasta Bunya_Filo_Arena_Para_ncbi_genomic_DB
 
 mmseqs search --threads 200 --search-type 3 Bunya_Filo_Arena_Para_ncbi_genomic_DB Hou_et_al.index Bunya_Filo_Arena_Para_ncbi_genomic_DB_ResultsDB tmp
+
+https://pebblescout.ncbi.nlm.nih.gov/ is used to query Bunya_Filo_Paramyxo_imgvr_genomic.fasta and Bunya_Filo_Arena_Para_ncbi_genomic.fasta against "Metagenomic", "Human RNAseq 2021" and "SRA microbe" datasets (others did not produce meaningful sample yield) - Sourmash Branchwater (https://branchwater.jgi.doe.gov/) was investigated but minimum query size of 50kb proved impractical
+identified SRA samples were dereplicated and combined and cut off at a Pebblescount score of 50, set into 8103 SRA samples that likely contain one of the 4 targeted taxa in All_SRRs_meta_sra_humanrna.
+
