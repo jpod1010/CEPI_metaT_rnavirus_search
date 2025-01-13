@@ -26,3 +26,8 @@ mmseqs search --threads 200 --search-type 3 Bunya_Filo_Arena_Para_ncbi_genomic_D
 https://pebblescout.ncbi.nlm.nih.gov/ is used to query Bunya_Filo_Paramyxo_imgvr_genomic.fasta and Bunya_Filo_Arena_Para_ncbi_genomic.fasta against "Metagenomic", "Human RNAseq 2021" and "SRA microbe" datasets (others did not produce meaningful sample yield) - Sourmash Branchwater (https://branchwater.jgi.doe.gov/) was investigated but minimum query size of 50kb proved impractical
 identified SRA samples were dereplicated and combined and cut off at a Pebblescount score of 50, set into 8103 SRA samples that likely contain one of the 4 targeted taxa in All_SRRs_meta_sra_humanrna.
 
+minimap2 -t 200  -ax sr Combined_Assembly_Target.fasta DRR279032.fastq.gz -a  -o test2.sam  --sam-hit-only --MD
+reformat.sh in=test2.sam out=test2.fastq.gz
+megahit -r test2.fastq.gz -o test_targeted_megahit -t 200
+genomad end-to-end --cleanup final.contigs.fa genomad_test /home/jpodowski/databases/genomaddb/genomad_db/
+
