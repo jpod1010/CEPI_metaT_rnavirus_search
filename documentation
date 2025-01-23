@@ -31,3 +31,12 @@ reformat.sh in=test2.sam out=test2.fastq.gz
 megahit -r test2.fastq.gz -o test_targeted_megahit -t 200
 genomad end-to-end --cleanup final.contigs.fa genomad_test /home/jpodowski/databases/genomaddb/genomad_db/
 
+
+In order to capture SRA data post 2021 indexing by pebblescout, papers were manually scanned for metaT samples of potential value in large projects (Bat metaviromes, ocean/lake/river/soil)
+
+https://www.nature.com/articles/s41564-024-01884-7#data-availability
+https://www.nature.com/articles/s41467-023-39835-1#Sec25
+https://www.sciencedirect.com/science/article/pii/S0092867423009169?via%3Dihub#da0010
+https://www.nature.com/articles/s41564-022-01275-w#data-availability
+
+
