@@ -31,6 +31,10 @@ reformat.sh in=test2.sam out=test2.fastq.gz
 megahit -r test2.fastq.gz -o test_targeted_megahit -t 200
 genomad end-to-end --cleanup final.contigs.fa genomad_test /home/jpodowski/databases/genomaddb/genomad_db/
 
+large scale whole sample assembly was carried out as
+
+for i in ERR*; do megahit --12 "${i}" -t 200 -m 0.5 -o "${i//.fastq.gz}_megahit"; done
+
 
 In order to capture SRA data post 2021 indexing by pebblescout, papers were manually scanned for metaT samples of potential value in large projects (Bat metaviromes, ocean/lake/river/soil)
 
